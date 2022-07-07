@@ -1,0 +1,107 @@
+.about {
+  @extend .container;
+  margin-bottom: 30px;
+  
+  @media all and (max-width: 767px) {
+    display: none;
+  }
+
+  &List {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -2px;
+  }
+
+  &El {
+    width: calc(33.3333% - 4px);
+    margin: 0 2px;
+    background-color: #f9f9fa;
+    padding: 12px 10px 10px;
+    transition: background-color .75s ease;
+    border-radius: 5px;
+    overflow: hidden;
+
+    &Content {
+      max-width: 310px;
+      position: relative;
+      padding-left: 66px;
+
+      i {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    &Title {
+      font-family: $titleFont;
+      font-weight: bold !important;
+      font-size: 19px;
+      line-height: 19px;
+      color: $mainBlack;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    &Text {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 19px;
+      color: rgb(34, 34, 38);
+
+      a {
+        font-family: $titleFont;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 19px;
+        color: $mainBlack;
+        text-decoration: none;
+        outline: none !important;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+          color: #5b5c6c;
+        }
+      }
+    }
+
+    &:hover {
+      background: #f0f0f0;
+    }
+  }
+
+  @media all and (max-width: 767px) {
+    margin-top: 15px;
+
+    &List {
+      margin: 0;
+    }
+    &El {
+      width: 100%;
+      margin: 0;
+
+      & + & {
+        margin-top: 15px;
+      }
+
+      &Content {
+        max-width: 100%;
+        text-align: center;
+        padding: 60px 0 0 0;
+
+        i {
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 45px;
+          height: 45px;
+        }
+      }
+    }
+  }
+
+}

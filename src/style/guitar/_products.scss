@@ -1,0 +1,132 @@
+
+.products {
+
+  &El {
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    //margin: 0 -10px;
+    padding: 10px;
+    border-radius: $br;
+    background-color: #fff;
+
+    &Img {
+      float: left;
+      margin: 0 15px 0 0;
+      border-radius: 5px;
+      border-radius: $br;
+      overflow: hidden;
+    }
+
+    &Name {
+      font-weight: 700;
+      font-size: .929em;
+      color: $mainBlack;
+      padding-top: 4px;
+      &:hover {
+        text-decoration: none;
+        color: #5b5c6c;
+      }
+
+    }
+    &Price {
+      &Cur{
+        display: block;
+        margin: 10px 0 0 0;
+        color: #5b5c6c;
+        font-size: .929em;
+        font-weight: 700;
+      }
+    }
+
+    &Rating {
+      display: block;
+      margin: 4px 0 0 0;
+    }
+
+    & + & {
+      margin-top: 15px;
+      //padding-top: 15px;
+      //border-top: solid 1px #e5e5e5;
+    }
+  }
+
+}
+/*
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 15px 0;
+  border-bottom: 1px solid #e5e5e5;;
+  padding: 0 0 15px 0;
+
+  &Image {
+    width: 28.57%;
+    padding: 0 15px 18px 0;
+    position: relative;
+  }
+
+  &Price {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-family: $titleFont;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 17px;
+    color: #5b5c6c;
+  }
+
+  &Info {
+    width: 71.43%;
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+      transition: color .35s ease, background-color .35s ease, border-color .35s ease;
+      display: block !important;
+      width: 100%;
+      font-family: $titleFont;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 17px;
+      margin: 4px 0;
+      color: #333333;
+      background: transparent;
+
+      &:hover {
+        color: $mainBlack;
+        text-decoration: underline;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &Rating {
+    width: 120px;
+    margin-bottom: 10px;
+    font-size: 0;
+    display: block;
+    letter-spacing: 0;
+    word-spacing: 0;
+    line-height: 0;
+
+    span {
+      padding: 0;
+      font-size: 18px;
+      margin: 0;
+      line-height: 1;
+      color: lightgrey;
+      text-shadow: 1px 1px #bbb;
+    }
+  }
+
+  &Rating > span:before {
+    content: '★';
+  }
+  &Rating > &Rating_active {
+    color: #fd860a;
+    text-shadow: 1px 1px #c60;
+  }
+}*/

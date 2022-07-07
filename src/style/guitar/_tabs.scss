@@ -1,0 +1,47 @@
+.sideTabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  &Controls {
+    width: 35.08%;
+
+    span {
+      display: block;
+      font-family: $titleFont;
+      font-size: 18px;
+      color: #8c8c8c;
+      font-weight: 700;
+      border: 1px solid #e5e5e5;
+      transition: color .5s ease, border-color .5s ease;
+      padding: 7px 40px 8px 19px;
+      margin-bottom: 3px;
+      cursor: pointer;
+
+      &.active {
+        color: #23527c;
+        text-decoration: underline;
+        border: 1px solid #000000;
+      }
+
+      &:hover {
+        color: #23527c;
+        text-decoration: underline;
+      }
+    }
+
+  }
+
+  &Content {
+    width: 64.9%;
+    padding: 0 10px 0 30px;
+  }
+
+  &Panel {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}

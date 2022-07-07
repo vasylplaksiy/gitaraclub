@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>blog</title>
+
+    @@include('include/settings/head_meta_tags.html')
+
+    @@include('include/settings/head_connect_files.html')
+
+</head>
+<body>
+
+@@include('include/global/header.html')
+
+@@include('include/guitar/menu.html')
+
+<div class="wrapContent">
+    <div class="sidebar">
+        <div class="sidebarBox">
+            <div class="sidebarBoxTitle">
+                КАТЕГОРИИ
+            </div>
+            <div class="sidebarBoxContent">
+                <ul class="accordion simple">
+                    <li>
+                        <a href="#">Про гитары</a>
+                    </li>
+                    <li>
+                        <a href="#">Про технику игры</a>
+                    </li>
+                    <li>
+                        <a href="#">Про укулеле</a>
+                    </li>
+                    <li>
+                        <a href="#">Факты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebarBox">
+            <div class="sidebarBoxTitle">
+                ВСТУПАЙ В КЛУБ!
+            </div>
+            <div class="sidebarBoxContent">
+                <div class="enterClub">
+                    <div class="enterClubTitle">Уютные письма о гитарах и музыкальной движухе :)</div>
+                    <form class="enterClubSubmit">
+                        <input type="email" placeholder="Ваш емейл">
+                        <button type="button">ПОДПИСАТЬСЯ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        @@include('include/guitar/blog.html')
+    </div>
+</div>
+
+@@include('include/global/footer.html')
+
+@@include('include/settings/body_connect_files.html')
+
+
+</body>
+</html>

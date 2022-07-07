@@ -1,0 +1,142 @@
+.wrapContent {
+  @extend .container;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  @media all and (max-width: 767px) {
+    margin-top: 0;
+  }
+}
+
+.content {
+  width: 74.34%;
+
+  @media all and (max-width: 767px) {
+    order: 0;
+  }
+
+  &.wide {
+    width: 100%;
+  }
+
+  &Box {
+    //background-color: #fff;
+    //border-radius: 10px;
+    //padding-top: 15px;
+    //overflow: hidden;
+
+    .splide__arrows {
+      position: absolute;
+      top: -67px;
+      right: 0;
+      display: flex;
+    }
+
+    .splide__arrow {
+      opacity: 1;
+      background: #fff;
+      border: solid 1px #e5e5e5;
+      width: 30px;
+      height: 30px;
+      border-radius: 3px;
+      position: static;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      margin: 0 0 0 4px;
+      transform: none;
+    }
+    &Title {
+
+      position: relative;
+      font-family: $titleFont;
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      a {
+        font-weight: 700;
+        font-family: $titleFont;
+        text-decoration: none;
+      }
+
+      a {
+        //font-weight: 400;
+        display: inline-block;
+        vertical-align: middle;
+        text-transform: uppercase;
+        color: $mainBlack;
+      }
+    }
+
+    &Header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgb(229, 229, 229);
+      margin: 0 0 15px 0;
+      padding: 0 0 13px 0;
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 83px;
+        height: 1px;
+        z-index: 2;
+        background-color: $mainBlack;
+      }
+    }
+
+    &Controls {
+      width: 80px;
+    }
+    &Inner {
+      padding: 15px 0;
+    }
+  }
+
+  &Columns {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px -15px 0 -15px;
+
+    &El {
+      width: 41.62%;
+      padding: 0 15px;
+
+      &_wide {
+        width: 58.38%;
+        padding: 0 15px;
+      }
+    }
+
+  }
+
+  @media all and (max-width: 767px) {
+    width: 100%;
+    margin-top: 15px;
+
+    &ColumnsEl {
+
+      &_wide {
+        width: 100%;
+      }
+
+      &_small {
+        width: 100%;
+        //display: none!important;
+      }
+    }
+  }
+
+}
+
+
+
+
+

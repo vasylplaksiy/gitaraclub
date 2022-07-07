@@ -1,0 +1,492 @@
+.header {
+
+  &Top {
+    padding: 6px 0 7px;
+    background-color: #f9f9fa;
+    border-bottom: 1px solid rgba(34, 34, 38, 0.15);
+  }
+
+  &Inner,
+  &Main {
+    @extend .container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &Main {
+    padding: 25px 15px;
+  }
+
+  &Logo {
+    text-decoration: none;
+    display: block;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &Contacts {
+
+    &El {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 21px;
+      color: #8c8c8c;
+      border-right: 2px solid #8c8c8c;
+      padding-right: 4px;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      a {
+        /*   font-family: $titleFont;
+           color: #3583BD;
+           text-decoration: underline;
+
+           &:hover {
+             text-decoration: none;
+           }*/
+
+        font-family: $titleFont;
+        font-weight: 400;
+        color: #4782B6;
+        display: inline-block;
+        text-decoration: none;
+        transition: color .35s ease, background-color .35s ease, border-color .35s ease;
+        position: relative;
+        padding-left: 17px;
+
+        &:before {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          top: 1px;
+          left: 0;
+          background: url("img/svg/phone.svg") no-repeat center;
+          background-size: contain;
+          width: 12px;
+          height: 16px;
+          transform: rotate(105deg);
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    @media all and (max-width: 767px) {
+
+    }
+  }
+
+  &Links {
+    line-height: 21px;
+
+    a {
+      display: inline-block;
+      font-family: $titleFont;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 21px;
+      position: relative;
+      text-decoration: none;
+      cursor: pointer;
+      color: rgb(34, 34, 38);
+    }
+
+    &Login {
+      padding-left: 20px;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 0;
+        background: url("img/svg/user-alt.svg") no-repeat center;
+        background-size: cover;
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+
+  &Info {
+    display: flex;
+  }
+
+  &Search {
+    position: relative;
+    width: 242px;
+
+    &Btn {
+      display: none;
+      width: 18px;
+      height: 18px;
+      padding: 0;
+      cursor: pointer;
+      background-color: transparent;
+      background-image: inline("search-white.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    &Val {
+      input {
+        @extend .formInput;
+        padding-right: 40px;
+      }
+    }
+
+    &Submit {
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      top: 0;
+      right: 0;
+      z-index: 2;
+
+      button {
+        display: block;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        background-image: inline("search.svg");
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: center;
+      }
+    }
+  }
+
+  &Basket {
+    display: block;
+    padding: 0 0 0 30px;
+    margin: 9px 0 0 5px;
+    position: relative;
+    min-width: 30px;
+    color: #000;
+    text-decoration: none;
+    line-height: 20px;
+    height: 20px;
+
+    &:before {
+      background-color: transparent;
+      background-image: inline("cart-black.svg");
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-position: center;
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 5px;
+      margin: -10px 0 0 0;
+    }
+
+    &Counter {
+      font-size: .79em;
+      display: inline-block;
+      margin: 7px 0 0 2px;
+      position: absolute;
+      left: 25px;
+      top: -12px;
+    }
+
+    &Price {
+      font-size: .86em;
+      line-height: 20px;
+      margin-left: 10px;
+      display: inline-block;
+      vertical-align: top;
+      font-weight: 700;
+    }
+
+  }
+
+  @media all and (max-width: 767px) {
+
+    & {
+      border: none;
+      height: 49px;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 110;
+    }
+    &Top {
+      padding: 0;
+      border-bottom: none;
+    }
+
+    &Links {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+
+      &Login {
+        padding-left: 0;
+        width: 40px;
+        height: 50px;
+        display: block;
+        margin: 0;
+
+        &:before {
+          top: 15px;
+          left: 11px;
+          background-image: url("img/svg/user-alt-white.svg");
+          background-size: cover;
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+
+    &Main {
+      display: block;
+      height: 0;
+      padding: 0;
+    }
+
+    &Logo {
+      //display: b;
+      width: 80px;
+      height: 44px;
+      position: absolute;
+      top: 2px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      //background: #fff;
+      filter: invert(1);
+      //border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      padding: 2px;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+      }
+    }
+
+    &Top {
+      border-top: solid 50px $mainBlack;
+      background: #fff;
+    }
+
+    &Contacts {
+      padding: 3px 0 0px 50px;
+      display: none;
+
+      &:before {
+        content: "Магазин гитар";
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      &El {
+        /*     color: $mainBlack;
+             font-size: 14px;
+             line-height: 18px;
+             font-weight: 400;*/
+
+        a {
+          position: absolute;
+          right: 117px;
+          top: 16px;
+          font-size: 0;
+          line-height: 0;
+          word-spacing: 0;
+          letter-spacing: 0;
+          width: 15px;
+          height: 18px;
+          padding: 0;
+
+          &:after {
+            position: absolute;
+            top: -16px;
+            left: -5px;
+            right: -5px;
+            height: 50px;
+            content: "";
+            display: block;
+          }
+
+          &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            background: inline("phone-white.svg") no-repeat center;
+            background-size: contain;
+            width: 15px;
+            height: 18px;
+            transform: rotate(105deg);
+          }
+          /*  //color: $mainBlack;
+            //text-decoration: underline;
+
+            //&:hover {
+            //  text-decoration: none;
+            //}*/
+
+        }
+      }
+    }
+
+    &Search {
+      position: absolute;
+      top: 6px;
+      left: 50px;
+      right: 90px;
+      width: auto;
+      display: none;
+
+      &Btn {
+        display: block;
+        position: absolute;
+        top: 16px;
+        right: 84px;
+        z-index: 3;
+        cursor: pointer;
+
+        &:before {
+          position: absolute;
+          top: -16px;
+          height: 50px;
+          right: -5px;
+          left: -5px;
+          content: "";
+        }
+      }
+
+      &Val {
+        input {
+          border-radius: 2px;
+        }
+      }
+    }
+
+    &Basket {
+      padding: 15px 0 15px 40px;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      height: 50px;
+      width: 40px;
+      color: #fff;
+
+      &:before {
+        background-color: transparent;
+        background-image: inline("cart-white.svg");
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: center;
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        left: 10px;
+        margin: -10px 0 0 0;
+      }
+
+      &Counter {
+        //background: #fff;
+        //color: #000;
+        margin: 7px 0 0 2px;
+        left: 30px;
+        top: 1px;
+      }
+
+      &Price {
+        display: none;
+      }
+
+    }
+  }
+
+  @media all and (min-width: 768px) {
+    &Top {
+      border: none;
+      height: 0;
+      padding: 0;
+    }
+
+    &Top &Inner {
+      position: relative;
+    }
+
+    &Main {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    &Logo {
+      max-width: 140px;
+    }
+
+    &Contacts {
+      position: absolute;
+      left: 180px;
+      top: 35px;
+    }
+
+    &Links {
+      position: absolute;
+      left: 320px;
+      top: 35px;
+    }
+
+    &Contacts {
+      position: absolute;
+      left: 180px;
+      top: 45px;
+    }
+
+    &Links {
+      position: absolute;
+      left: 180px;
+      top: 20px;
+    }
+  }
+
+  @media all and (min-width: 960px) {
+
+    &Contacts {
+      left: 180px;
+      top: 35px;
+    }
+
+    &Links {
+      left: 320px;
+      top: 35px;
+    }
+  }
+}

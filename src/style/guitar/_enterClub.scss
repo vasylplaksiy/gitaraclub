@@ -1,0 +1,35 @@
+.enterClub {
+  display: block;
+
+  &Title {
+    font-family: $titleFont;
+    margin: 0 0 15px 0;
+  }
+
+  &Submit {
+    margin: 0 0 10px 0;
+
+    input {
+      font-weight: 400;
+      font-size: 13px;
+      @extend .formInput;
+      margin-bottom: 10px;
+      transition: all .4s ease;
+
+    }
+  }
+
+  &Submit {
+    button {
+      @extend .formSubmitBtn;
+      background-color: $mainBlack;
+      color: #ffffff;
+
+      &:hover {
+        color: $mainBlack;
+        background-color: #fff;
+      }
+    }
+  }
+
+}

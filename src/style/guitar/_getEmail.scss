@@ -1,0 +1,23 @@
+.getEmail {
+  display: block;
+
+  &Title {
+    font-weight: 700;
+    margin: 0 0 15px 0;
+  }
+
+  &Val {
+    margin: 0 0 10px 0;
+
+    input {
+      @extend .formInput;
+    }
+  }
+
+  &Submit {
+    button {
+      @extend .formSubmitBtn;
+    }
+  }
+
+}

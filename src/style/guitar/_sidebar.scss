@@ -1,0 +1,68 @@
+.sidebar {
+  width: 25.65%;
+  padding-right: 30px;
+
+
+  .content + & {
+    padding-left: 30px;
+    padding-right: 0;
+  }
+
+  &Box {
+    //background-color: #fff;
+    //border-radius: 10px;
+    //overflow: hidden;
+    //padding-top: 10px;
+
+    &Title {
+      font-family: $titleFont;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 16px;
+      color: $mainBlack;
+
+      text-transform: uppercase;
+      position: relative;
+
+
+    }
+
+    &Title {
+      padding: 0 0 13px 0;
+      margin: 0 0 15px 0;
+      border-bottom: 1px solid #eeeeee;
+      position: relative;
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 83px;
+        height: 1px;
+        z-index: 2;
+        background-color: $mainBlack;
+      }
+    }
+
+    & + & {
+      margin-top: 20px;
+    }
+  }
+
+  @media all and (max-width: 767px) {
+    //display: none !important;
+    //max-height: 0;
+    //overflow: hidden;
+    order: 1;
+    width: 100%;
+    padding-right: 0;
+    padding-top: 20px;
+
+
+    .content + & {
+      padding-left: 0px;
+      padding-right: 0;
+    }
+  }
+}

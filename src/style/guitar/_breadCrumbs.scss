@@ -1,0 +1,47 @@
+.breadCrumbs {
+  padding: 7px 0 8px;
+  background-color: #f9f9fa;
+  margin: 20px 0;
+  font-size: 13px;
+  line-height: 1.2;
+
+  .nav + & {
+    margin-top: -20px;
+  }
+
+  &Inner {
+    @extend .container;
+  }
+
+  a {
+    color: $mainBlack;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  a + a {
+    &:before {
+      content: "/";
+      color: $mainBlack;
+      display: inline-block;
+      margin: 0 5px;
+    }
+  }
+  span {
+    color: #8c8c8c;
+    &:before {
+      content: "/";
+      color: #8c8c8c;
+      display: inline-block;
+      margin: 0 5px;
+    }
+  }
+
+  @media all and (max-width: 767px) {
+    margin: 0;
+
+    .nav + & {
+      margin: 0;
+    }
+  }
+}

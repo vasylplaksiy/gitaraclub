@@ -1,0 +1,156 @@
+.writeReview {
+  &Title {
+    font-size: 1.145em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 23px 0;
+  }
+
+  &Row {
+    margin: 15px 0 0 0;
+
+    label {
+      @extend .formLabel;
+    }
+
+    input {
+      @extend .formInput;
+    }
+
+    textarea {
+      @extend .formTextarea;
+    }
+
+    &_submit {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &Mark {
+
+    &Label {
+      margin: 0;
+    }
+    input {
+      display: none !important;
+    }
+
+    &List {
+      @extend .rating;
+      top: -1px;
+
+      i {
+        cursor: pointer;
+      }
+      &:hover i {
+        @extend .on;
+      }
+      i:hover {
+        @extend .on;
+
+        & ~ i {
+          @extend .off;
+        }
+      }
+
+    }
+  }
+
+  &Submit {
+    button {
+      @extend .formSubmitBtn;
+      width: 140px;
+    }
+  }
+}
+
+.rating {
+  line-height: 13px;
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+
+  i {
+    display: inline-block;
+    vertical-align: top;
+    width: 13px;
+    height: 13px;
+    background-image: inline("star-off.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &.on {
+      background-image: inline("star-on.svg");
+    }
+
+    &.off {
+      background-image: inline("star-off.svg");
+    }
+
+  }
+}
+
+.writeReview + .reviews {
+  margin-top: 25px;
+}
+
+.reviews {
+  &Title {
+    font-size: 1.145em;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  &List {
+
+  }
+
+  &El {
+    padding: 15px 0;
+
+    &Header {
+      padding: 0 80px 0 0;
+      position: relative;
+    }
+
+    &Rating {
+      position: absolute;
+      top: 3px;
+      right: 0;
+    }
+
+    &Author {
+      font-weight: 700;
+      display: inline-block;
+      margin: 0 5px 0 0;
+    }
+
+    &Date {
+      color: #8c8c8c;
+      display: inline-block;
+    }
+
+    &Content {
+      padding: 10px 0 0 0;
+
+      p {
+        margin: 10px 0;
+      }
+
+      & > *:first-child {
+        margin-top: 0;
+      }
+
+      & > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    & + & {
+      border-top: solid 1px #f0f0f2;
+    }
+  }
+}

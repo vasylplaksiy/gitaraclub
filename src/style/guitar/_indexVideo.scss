@@ -1,0 +1,140 @@
+.intro {
+  @extend .container;
+  margin-bottom: 55px;
+
+  @media all and (max-width: 959px) {
+    margin-bottom: 0;
+  }
+
+  &Inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  &Content {
+    width: 66.222%;
+    padding: 0 15px;
+    position: relative;
+  }
+
+  &Sidebar {
+    width: 33.778%;
+    padding: 0 15px;
+
+    @media all and (min-width: 960px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .banner {
+        display: flex;
+        align-items: center;
+        min-height: calc((66.22vw - 30px) * 0.75 - 20px - ((33.778vw - 30px) * 0.76));
+      }
+    }
+
+    @media all and (min-width: 1170px) {
+      .banner {
+        min-height: 265px;
+      }
+    }
+  }
+
+  @media all and (max-width: 959px) {
+
+    &Inner {
+      display: block;
+    }
+
+    &Content {
+      display: block;
+      width: 100%;
+    }
+
+    &Sidebar {
+      display: block;
+      width: 100%;
+
+      .view {
+        display: none;
+      }
+    }
+  }
+
+  @media all and (max-width: 767px) {
+
+    &Content {
+      padding: 0;
+    }
+
+    &Sidebar {
+      padding: 0;
+    }
+  }
+}
+
+.indexVideo {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #000;
+
+  iframe, video {
+    border: none;
+    display: block;
+    vertical-align: top;
+  }
+
+  /*@media all and (min-width: 960px) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    width: auto;
+
+    iframe, video {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: none;
+    }
+  }*/
+
+  //@media all and (max-width: 959px) {
+  position: relative;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  width: 100%;
+
+  &:after {
+    display: block;
+    content: "";
+    line-height: 0;
+    font-size: 0;
+    padding-bottom: 75%;
+  }
+
+  iframe, video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: none;
+  }
+  //}
+
+  @media all and (max-width: 767px) {
+    border-radius: 0px;
+    /*
+        &:after {
+          padding-bottom: 75%;
+        }*/
+  }
+}
+

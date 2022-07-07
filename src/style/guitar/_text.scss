@@ -1,0 +1,99 @@
+.text {
+  overflow: hidden;
+
+  .videoBox, .scaleHoverImg {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  .videoBox + & {
+    margin-top: 30px;
+  }
+
+  &VideoAlign {
+    float: left;
+    width: 60%;
+    margin: 0 30px 0 0;
+
+    & + p {
+      margin-top: 0;
+    }
+
+    @media all and (max-width: 767px) {
+      float: none;
+      width: 100%;
+      margin: 15px 0;
+    }
+  }
+
+  & > * {
+    &:first-child {
+      margin-top: 0 !important;
+    }
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  h2 {
+    margin: 21px 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      position: relative;
+      padding: 0 0 0 20px;
+
+      &:before {
+        width: 4px;
+        height: 4px;
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        left: 0;
+        top: 9px;
+        background: #000;
+      }
+    }
+  }
+
+  &.rulesPageArticle {
+
+    h2 {
+      counter-increment: listTitle;
+      &:before {
+        content: counter(listTitle) ". ";
+      }
+    }
+    ol {
+      li {
+        list-style-type: none;
+        counter-increment: list;
+        &:before {
+          content: counter(listTitle) "." counter(list);
+        }
+      }
+    }
+  }
+}
+
+.scaleHoverImg {
+  overflow: hidden;
+
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    transition: all 0.5s ease-out;
+    transform-origin: center;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+}

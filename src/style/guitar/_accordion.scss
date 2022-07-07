@@ -1,0 +1,80 @@
+.accordion {
+  padding: 0;
+  list-style: none;
+  font-size: 1.075em;
+  font-weight: 700;
+
+  &ToggleBtn {
+    position: absolute;
+    cursor: pointer;
+    width: 30px;
+    display: block;
+    top: 0;
+    height: 35px;
+    right: 0;
+    z-index: 2;
+  }
+
+  &TitleToggle, &ToggleBtn {
+    &:after {
+      content: "+";
+      position: absolute;
+      display: flex;
+      align-items: center;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 35px;
+      cursor: pointer;
+    }
+  }
+
+  li.active > &TitleToggle,
+  li.active > &ToggleBtn {
+    &:after {
+      content: "-";
+    }
+  }
+
+  ul {
+    margin: 0 0 0 15px;
+    display: none;
+    padding: 0;
+    list-style: none;
+
+    ul {
+      font-size: .86em;
+    }
+  }
+
+  li {
+    position: relative;
+    display: block;
+
+    a {
+      padding: 7px 15px;
+      display: block;
+      color: $mainBlack;
+      position: relative;
+      text-decoration: none;
+
+      &:hover {
+        color: #5b5c6c;
+        text-decoration: underline;
+      }
+    }
+
+    &.active > a {
+      background-color: #f9f9fa;
+      color: #5b5c6c;
+    }
+
+    &.active > ul {
+      display: block;
+    }
+  }
+
+  &SubToggle {
+    padding-right: 40px;
+  }
+}

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>links</title>
+
+	@@include('include/settings/head_meta_tags.html')
+
+	@@include('include/settings/head_connect_files.html')
+
+</head>
+<body>
+
+@@include('include/global/header.html')
+
+@@include('include/guitar/menu.html')
+
+<div class="wrapContent">
+	<div class="content wide">
+		<article class="text">
+			<h2>Ссылки на страницы</h2>
+			<ul>
+				<li><a href="index.html" target="_blank">Главная</a></li>
+				<li><a href="card.html" target="_blank">Карточка</a></li>
+				<li><a href="repair.html" target="_blank">Ремонт гитар</a></li>
+				<li><a href="shops.html" target="_blank">Магазины</a></li>
+				<li><a href="return.html" target="_blank">Возврат</a></li>
+				<li><a href="catalog.html" target="_blank">Каталог</a></li>
+				<li><a href="rules.html" target="_blank">Политика конфиденциальности</a></li>
+				<li><a href="qa.html" target="_blank">Вопрос - ответ</a></li>
+				<li><a href="credit.html" target="_blank">Рассрочкой</a></li>
+				<li><a href="blog.html" target="_blank">Блог</a></li>
+				<li><a href="basket.html" target="_blank">Корзина</a></li>
+				<li><a href="order.html" target="_blank">Оформление</a></li>
+				<li><a href="links.html" target="_blank">Страницы со ссылками</a></li>
+			</ul>
+			<h2>
+				Попапы
+			</h2>
+			<ul>
+				<li><a href="#" class="showModal" data-modal="#cardStock1">Ожидаем, в пути</a></li>
+				<li><a href="#" class="showModal" data-modal="#cardDeliveryVideo">Смотреть видео</a></li>
+				<li><a href="#" class="showModal" data-modal="#onlyVideo">Только видео</a></li>
+				<li><a href="#" class="showModal" data-modal="#onlyVideoFullScreen">Только видео ПОЛНОЕКРАННОЕ</a></li>
+				<li><a href="#" class="showModal" data-modal="#cardFast">Купить в один клик (без оформления)</a></li>
+				<li><a href="#" class="showModal" data-modal="#cardCredit">Рассрочка</a></li>
+				<li><a href="#" class="showAjaxModal" data-modal="/ajax/testAjaxPopup.html">Тестовый аяксовый попап</a></li>
+			</ul>
+		</article>
+	</div>
+</div>
+
+@@include('include/guitar/modals.html')
+
+@@include('include/global/footer.html')
+
+@@include('include/settings/body_connect_files.html')
+
+
+</body>
+</html>

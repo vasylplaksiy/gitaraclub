@@ -1,0 +1,83 @@
+.team {
+
+  &El {
+    overflow: hidden;
+    margin-bottom: 15px;
+    //margin-left: -10px;
+    //margin-right: -10px;
+    min-height: 100px;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: $br;
+    background-color: #fff;
+
+    &Img {
+      display: block;
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 20px;
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    &Info {
+      font-style: italic;
+      display: table;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      margin-bottom: 3px;
+
+      &_author {
+        display: block;
+      }
+
+      a,
+      span {
+        font-family: $titleFont;
+        font-weight: 400;
+        font-style: normal;
+        display: inline-block;
+      }
+
+      a {
+        color: $mainBlack;
+        text-decoration: none;
+        transition: color .35s ease, background-color .35s ease, border-color .35s ease;
+
+        &:hover {
+          text-decoration: underline;
+          opacity: 0.8;
+        }
+      }
+
+      span {
+        color: #8c8c8c;
+      }
+    }
+  }
+
+  @media all and (max-width: 1199px) {
+    &ElImg {
+      margin-bottom: 0;
+    }
+  }
+
+  @media all and (max-width: 380px) {
+    &El {
+      &Img {
+        margin-right: 15px;
+
+        img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+
+  }
+
+}

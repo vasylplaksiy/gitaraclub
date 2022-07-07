@@ -1,0 +1,159 @@
+.blog {
+
+  &Track {
+    //margin: 0 -10px;
+  }
+
+  &El {
+    //margin: -10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: $br;
+    background-color: #fff;
+
+    &:hover {
+      border: 1px solid #e5e5e5;
+    }
+
+  }
+
+  &El:hover &Video img {
+    transform: scale(1.1);
+  }
+
+  &Inner{
+    padding: 10px;
+  }
+
+  &Video {
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border-radius: $br;
+
+    img {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      transition: all 0.3s ease-out;
+    }
+  }
+
+  &Content {
+    display: flex;
+  }
+
+  &Item {
+    width: 70px;
+    padding-right: 20px;
+  }
+
+  &Date {
+    padding: 10px 5px 7px;
+    margin-bottom: 15px;
+    background-color: #5b5c6c;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+
+
+    span {
+      text-transform: uppercase;
+      font-family: $titleFont;
+      line-height: 17px;
+    }
+
+    &_number {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    &_month {
+      font-size: 11px;
+      font-weight: 400;
+    }
+  }
+
+  &Comment {
+    text-align: center;
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+    word-spacing: 0;
+
+    a {
+      position: relative;
+      padding-left: 19px;
+      text-decoration: none;
+      color: $mainBlack;
+      font-family: $titleFont;
+      font-size: 12px;
+      line-height: 17px;
+      font-weight: 400;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url("img/svg/chat-speech-bubbles_icon-icons.com_54041.svg") no-repeat center;
+        width: 14px;
+        height: 17px;
+      }
+    }
+
+    &:hover a,
+    &:hover a:before {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+  }
+
+  &Info {
+    width: calc(100% - 70px);
+    margin: 3px 0 15px;
+
+    &Title {
+      margin-bottom: 13px;
+
+      a {
+        font-weight: bold !important;
+        text-decoration: none;
+        transition: color .35s ease, background-color .35s ease, border-color .35s ease;
+        font-family: $titleFont;
+        font-size: 16px;
+        line-height: 16px;
+        color: #333333;
+        background: transparent;
+      }
+
+      &:hover {
+        color: $mainBlack;
+        text-decoration: underline;
+        opacity: 0.8;
+      }
+    }
+
+    &Text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+}
+
+
+.blogs {
+  margin: 15px 0;
+
+  &El {
+    & + & {
+      margin-top: 30px;
+    }
+  }
+}

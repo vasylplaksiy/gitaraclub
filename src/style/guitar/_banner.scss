@@ -1,0 +1,103 @@
+.banner {
+  background-color: #fd860a;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &Inner {
+    //padding: 30px 32.5px 26px;
+    padding: 29px 32.5px 25px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  &Title {
+    font-family: $titleFont;
+    font-size: 30px;
+    line-height: 30px;
+    //margin-bottom: 10px;
+    margin-bottom: 7px;
+  }
+
+  &Text {
+    font-size: 14px;
+    line-height: 21px;
+    //margin-bottom: 15px;
+    margin-bottom: 12px;
+  }
+
+  @media all and (max-width: 959px) {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+
+  @media all and (max-width: 767px) {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
+  @media all and (max-width: 767px) {
+    .intro & {
+      display: none;
+    }
+  }
+
+}
+
+.get_in_club {
+  display: flex;
+
+  &El.wide {
+    width: 86.66666%;
+
+    input {
+      width: 100%;
+      font-size: 13px;
+      line-height: 21px;
+      font-weight: 400;
+      padding: 8.5px 10px 8.5px;
+      background: #fff;
+      color: rgb(89, 89, 89);
+      min-height: 38px;
+      border: none !important;
+      outline: none;
+
+      ::-webkit-input-placeholder {
+        color: rgb(89, 89, 89);
+      }
+    }
+  }
+
+  &El {
+    width: 13.33333%;
+
+    button {
+      position: relative;
+      font-size: 0;
+      width: 100%;
+      background-color: #ffffff;
+      border: none !important;
+      outline: none;
+      min-height: 38px;
+      cursor: pointer;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url("img/svg/envelope.svg") no-repeat center;
+        background-size: contain;
+        width: 16px;
+        height: 20px;
+      }
+    }
+
+    &:hover button:before {
+      background: url("img/svg/envelope-orange.svg") no-repeat center;
+    }
+  }
+
+}

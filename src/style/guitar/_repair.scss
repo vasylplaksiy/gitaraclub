@@ -1,0 +1,112 @@
+.repair {
+  margin: 0 0 33px 0;
+  border-top: 2px solid #fd860a;
+  border-bottom: 2px solid #fd860a;
+
+  &List {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 18px -15px 0;
+  }
+
+  &El {
+    width: 25%;
+    text-align: center;
+    position: relative;
+    padding: 0 15px 0;
+    margin-top: 12px;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &Icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 15px auto;
+      display: block;
+      background-color: #fd860a;
+      transition: all 0.5s ease-out;
+    }
+
+    &:hover &Icon{
+      opacity: 0.75;
+    }
+
+    &:after {
+      top: -4px;
+      right: 0;
+      width: 2px;
+      height: calc(100% - 20px);
+      background: #fd860a !important;
+      opacity: 0.8;
+    }
+
+    &:last-child:after {
+      display: none;
+    }
+
+    i.icon {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 30px;
+      height: 30px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+ /*   & .icon-walking{
+      width: 46px;
+      height: 34px;
+    }*/
+
+    &Title {
+      font-family: $titleFont;
+      font-size: 21px;
+      line-height: 21px;
+      color: $mainBlack;
+      margin-bottom: 10px;
+    }
+
+    &Text {
+
+      p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        margin: 0 0 10px 0;
+        padding: 0;
+      }
+
+      a{
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: $mainBlack;
+        transition: color .35s ease;
+
+        &:hover{
+          color: #23527c;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: 767px) {
+    &El {
+      width: 100%;
+
+      &:after{
+        display: none;
+      }
+    }
+  }
+}

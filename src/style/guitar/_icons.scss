@@ -1,0 +1,91 @@
+.icon {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+
+  &-facebook {
+    background-image: inline("facebook-f.svg");
+  }
+
+  &-vk {
+    background-image: inline("vk.svg");
+  }
+
+  &-youtube {
+    background-image: inline("youtube.svg");
+  }
+
+  &-instagram {
+    background-image: inline("instagram.svg");
+  }
+
+  &-caret {
+    background-image: inline("caret-down.svg");
+
+    &-white {
+      background-image: inline("caret-down-white.svg");
+    }
+  }
+
+  &-wrench {
+    background-image: inline("wrench.svg");
+  }
+
+  &-truck {
+    background-image: inline("truck.svg");
+  }
+
+  &-money {
+    background-image: inline("money-bill-alt.svg");
+  }
+
+  &-user2 {
+    background-image: inline("user-alt.svg");
+  }
+
+  &-phone {
+    background-image: inline("phone.svg");
+
+    .repair & {
+      background-image: inline("phone-white.svg");
+      transform: rotate(100deg);
+    }
+  }
+
+  &-key {
+    background-imacge: inline("key-skeleton.svg");
+  }
+
+  &-check {
+    background-image: inline("check-circle.svg");
+  }
+
+  &-certificate {
+    background-image: inline("certificate-white.svg");
+  }
+
+  &-visa {
+    @extend .icon;
+    background-image: inline("visa.svg");
+
+  }
+  &-mc {
+    @extend .icon;
+    background-image: inline("mc.svg");
+  }
+
+  &-walking{
+    background-image: inline("walking-white.svg");
+  }
+
+  &-star{
+    background-image: inline("star-white.svg");
+  }
+
+  &-edit{
+    background-image: inline("edit-white.svg");
+  }
+}

@@ -1,0 +1,100 @@
+.inventory {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+
+  &El {
+    width: 33.33333%;
+    padding: 5px 5px 10px 5px;
+  }
+
+  &Content {
+    position: relative;
+    border: 1px solid #e5e5e5;
+    padding: 10px 10px 67px 10px;
+    height: 100%;
+  }
+
+  &Img {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      transition: all 0.5s ease-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &Info{
+    margin: 32px 0 0 0;
+    text-align: center;
+
+    &Title{
+      display: block;
+      font-size: 16px;
+      line-height: 16px;
+      margin-bottom: 13px;
+      text-decoration: none;
+      transition: all 0.3s ease-out;
+
+      &:hover{
+        text-decoration: underline;
+        color: #5b5c6c;
+      }
+    }
+
+    &Text{
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    &Btn{
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: inline-block;
+      min-width: 95px;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 21px;
+      padding: 12px;
+      margin: 10px auto 0;
+      cursor: pointer;
+      background: #fd860a;
+      border: 1px solid #fd860a;
+      color: #fff;
+      transition: all .4s ease;
+      text-transform: uppercase;
+      text-align: center;
+      border-radius: 5px;
+      text-decoration: none;
+      outline: none!important;
+
+      &:hover{
+        background: #ffffff;
+        color: #fd860a;
+      }
+    }
+  }
+
+  @media all and (max-width: 767px){
+    &El{
+      width: 50%;
+    }
+  }
+
+  @media all and (max-width: 579px){
+    &El{
+      width: 100%;
+    }
+  }
+}
