@@ -13,6 +13,13 @@
     @extend .container;
   }
 
+  &Inner[itemtype="http://schema.org/BreadcrumbList"] {
+    a + a:before,
+    span:before {
+      display: none !important;
+    }
+  }
+
   a {
     color: $mainBlack;
     text-decoration: none;
