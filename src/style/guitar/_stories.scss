@@ -1,0 +1,30 @@
+.social {
+  display: flex;
+
+  a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 3px 3px 0;
+    position: relative;
+    transition: color .75s ease, background-color .75s ease, border-color .75s ease;
+    transition-property: color, background-color, border-color;
+    transition-duration: 0.75s, 0.75s, 0.75s;
+    transition-timing-function: ease, ease, ease;
+    transition-delay: 0s, 0s, 0s;
+
+    &:hover {
+      border-color: $mainBlack;
+    }
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
