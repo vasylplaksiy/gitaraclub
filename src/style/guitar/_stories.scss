@@ -1,30 +1,317 @@
-.social {
-  display: flex;
+.stories {
+  & {
+    margin: 0 -12px;
+  }
 
-  a {
-    display: block;
-    width: 40px;
-    height: 40px;
-    border: 1px solid #e5e5e5;
-    text-align: center;
-    border-radius: 5px;
-    margin: 0 3px 3px 0;
-    position: relative;
-    transition: color .75s ease, background-color .75s ease, border-color .75s ease;
-    transition-property: color, background-color, border-color;
-    transition-duration: 0.75s, 0.75s, 0.75s;
-    transition-timing-function: ease, ease, ease;
-    transition-delay: 0s, 0s, 0s;
+  &Wrap {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
 
-    &:hover {
-      border-color: $mainBlack;
+  &List {
+    display: flex;
+
+  }
+
+  &El {
+    padding: 12px;
+
+    &Link {
+      height: 20vw;
+      display: block;
+      overflow: hidden;
+      border-radius: 16px;
+      position: relative;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &:after {
+        background: rgb(23, 26, 28);
+        opacity: 0.5;
+        transition: all 0.3s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+      }
+
+      &:hover:after {
+        opacity: 0.75;
+      }
+    }
+
+    &Date {
+      padding: 12px;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      font-size: 13px;
+      line-height: 16px;
+      color: #fff;
+      z-index: 2;
+    }
+
+    &Text {
+      padding: 12px;
+      position: absolute;
+      display: block;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 13px;
+      line-height: 16px;
+      color: #fff;
+      z-index: 2;
     }
   }
 
-  i {
+  &Prev, &Next {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #fff;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: box-shadow .2s, opacity .2s;
+    box-shadow: 0px 0.9px 1.5px 0 rgba(0, 0, 0, 0.03);
+
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+
   }
+
+  &Prev {
+    left: 30px;
+  }
+
+  &Next {
+    right: 30px;
+  }
+
+}
+
+
+.storiesPopup {
+  opacity: 0;
+  transition: opacity .2s;
+  background: #0b0b0b;
+  position: fixed;
+  z-index: 3000;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  display: flex;
+  align-items: center;
+
+  &.active {
+    height: 100%;
+    bottom: 0;
+    opacity: 1;
+  }
+
+  &Close {
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    position: absolute;
+    text-decoration: none;
+    text-align: center;
+    opacity: .65;
+    font-family: Arial, Baskerville, monospace;
+    font-size: 0;
+    top: 1rem;
+    right: 1rem;
+    padding: 0;
+    z-index: 10;
+    color:#fff;
+    color: transparent;
+    overflow: visible;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+    -webkit-appearance: none;
+    display: block;
+    box-shadow: none;
+
+    &:before {
+      content: '';
+      width: 55%;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: center;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &:after {
+      content: '';
+      width: 55%;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: center;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:hover, &:focus {
+      opacity: 1;
+    }
+  }
+
+  &Slider {
+    height: 100%;
+    position: relative;
+  }
+
+  &List {
+    align-items: center;
+  }
+
+  &El {
+    background-color: rgb(28, 28, 33);
+    width: 90%;
+    height: 160vw;
+    border-radius: 30px;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    position: relative;
+
+    @media all and (min-width: 48rem) {
+      width: 48vh;
+      height: 80vh;
+    }
+
+    &Date {
+      padding: 25px;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      font-size: 16px;
+      line-height: 20px;
+      color: #fff;
+      z-index: 4;
+    }
+
+    &Text {
+      padding: 25px;
+      position: absolute;
+      display: block;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 16px;
+      line-height: 22px;
+      color: #fff;
+      z-index: 3;
+      text-shadow: rgba(28, 28, 33, 0.6) 0px 1px 4px;
+      background-image: linear-gradient(0deg, rgba(28, 28, 33, 0.6), rgba(28, 28, 33, 0));
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    &Photo {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+
+    &Preloader {
+      width: 2rem;
+      height: 2rem;
+      margin-left: -1rem;
+      margin-top: -1rem;
+      opacity: .5;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform-origin: 50%;
+      animation: swiper-preloader-spin 1s infinite linear;
+      box-sizing: border-box;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      border-top-color: transparent;
+      z-index: 1;
+    }
+
+    @keyframes swiper-preloader-spin {
+      100% {
+        transform: rotate(360deg)
+      }
+    }
+
+  }
+
+  &Prev,
+  &Next {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: box-shadow .2s, opacity .2s;
+    box-shadow: 0px 0.9px 1.5px 0 rgba(0, 0, 0, 0.03);
+
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+
+  }
+
+  &Prev {
+    left: 30px;
+  }
+
+  &Next {
+    right: 30px;
+  }
+
 }

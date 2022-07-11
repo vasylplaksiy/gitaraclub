@@ -2,57 +2,19 @@
 <html lang="ru">
 <head>
 	<title>index</title>
-
 	@@include('include/settings/head_meta_tags.html')
-
 	@@include('include/settings/head_connect_files.html')
-
 </head>
 <body>
 @@include('include/guitar/topSale.html')
 @@include('include/guitar/header_y.html')
 @@include('include/guitar/nav_p.html')
 @@include('include/guitar/videoBanner.html')
-
-<div class="aboutUs">
-	<div class="aboutUsList">
-		<div class="aboutUsEl">
-			<div class="aboutUsElIcon">
-				<i class="icon-rocket"></i>
-			</div>
-			<div class="aboutUsElTitle">Бесплатная доставка</div>
-			<div class="aboutUsElText">От 9 000руб.</div>
-		</div>
-		<div class="aboutUsEl">
-			<div class="aboutUsElIcon">
-				<i class="icon-sync"></i>
-			</div>
-			<div class="aboutUsElTitle">30 дней на возврат</div>
-			<div class="aboutUsElText">Передумали, заберём</div>
-		</div>
-		<div class="aboutUsEl">
-			<div class="aboutUsElIcon">
-				<i class="icon-credit-card"></i>
-			</div>
-			<div class="aboutUsElTitle">Безопасный платеж</div>
-			<div class="aboutUsElText">Всё серьёзно</div>
-		</div>
-		<div class="aboutUsEl">
-			<div class="aboutUsElIcon">
-				<i class="icon-bubbles"></i>
-			</div>
-			<div class="aboutUsElTitle">24/7 Поддержка</div>
-			<div class="aboutUsElText">Уснули, проснёмся</div>
-		</div>
-	</div>
-</div>
-
+@@include('include/blocks/stories.html')
+@@include('include/blocks/cardsNav.html')
+@@include('include/blocks/aboutUs.html')
 @@include('include/guitar/section.html')
-
 @@include('include/global/footer.html')
-
 @@include('include/settings/body_connect_files.html')
-
-
 </body>
 </html>

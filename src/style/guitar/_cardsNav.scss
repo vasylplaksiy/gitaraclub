@@ -1,47 +1,192 @@
-.sideTabs {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+.cardsNav {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 15px;
 
-  &Controls {
-    width: 35.08%;
+  &List {
+    margin: 0 -15px;
+    display: flex;
+  }
 
-    span {
+  &Col {
+    padding: 0 15px;
+
+    &_w {
+      width: 41.67%;
+    }
+
+    &_m {
+      width: 33.33%;
+    }
+
+    &_s {
+      width: 25%;
+    }
+  }
+
+  &El {
+    background: rgb(229, 230, 230);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    min-height: 13rem;
+    margin: 30px 0 0 0;
+    padding: 25px;
+    color: rgb(23, 26, 28);
+
+    & > * {
+      position: relative;
+      z-index: 3;
+    }
+
+    &GlobalLink {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       display: block;
-      font-family: $titleFont;
-      font-size: 18px;
-      color: #8c8c8c;
+      z-index: 4;
+    }
+
+
+    &Icon {
+      background: #fff;
+      border-radius: 50%;
+      padding: 8px;
+      display: inline-block;
+      margin: 0 0 15px 0;
+
+      svg {
+        vertical-align: top;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &Title {
+      font-size: 31.25px;
       font-weight: 700;
-      border: 1px solid #e5e5e5;
-      transition: color .5s ease, border-color .5s ease;
-      padding: 7px 40px 8px 19px;
-      margin-bottom: 3px;
-      cursor: pointer;
+      padding: 0;
+      margin: 0 0 20px 0;
+      max-width: 66%;
 
-      &.active {
-        color: #23527c;
-        text-decoration: underline;
-        border: 1px solid #000000;
+      &_wide {
+        max-width: 100%;
+      }
+    }
+
+    &Tags {
+      margin: 12px -4px 0 -4px;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-flow: row wrap;
+      max-width: 66%;
+      z-index: auto;
+
+      &_wide {
+        max-width: 100%;
       }
 
-      &:hover {
-        color: #23527c;
-        text-decoration: underline;
+      li {
+        padding: 2px;
+
+        a {
+          padding: 3.5px 7px;
+          border: 1px solid transparent;
+          transition: color .1s, background-color .1s;
+          color: rgb(23, 26, 28);
+          font-size: 14px;
+          line-height: 16px;
+          display: block;
+          border-radius: 7px;
+          background: #fff;
+          text-decoration: none;
+          position: relative;
+          z-index: 6;
+
+          &:hover {
+            background-color: rgb(23, 26, 28);
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    &Img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: auto 93%;
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      z-index: 1;
+
+      img {
+        opacity: 0 !important;
+        position: absolute;
+      }
+
+      &_simple {
+        display: block;
+        position: relative;
+        margin: 20px -25px 0 -25px;
+        top: 25px;
+        left: auto;
+        right: auto;
+        bottom: auto;
+
+        img {
+          position: relative;
+          opacity: 1 !important;
+          width: 120%;
+          max-width: 120%;
+          margin-bottom: -4rem;
+          left: 10%;
+          transform: rotate(10deg);
+        }
+      }
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &Link {
+      transition: all 0.2s;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: none;
+
+      span {
+        vertical-align: top;
+      }
+
+      svg {
+        margin-left: 4px;
+        height: 24px;
+        vertical-align: top;
+        transition: all 0.2s;
+      }
+
+    }
+
+    &:hover &Link {
+      color: rgb(0, 76, 138);
+
+      svg {
+        fill: rgb(0, 76, 138);
       }
     }
 
   }
 
-  &Content {
-    width: 64.9%;
-    padding: 0 10px 0 30px;
-  }
-
-  &Panel {
-    display: none;
-
-    &.active {
-      display: block;
-    }
-  }
 }

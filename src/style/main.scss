@@ -2,6 +2,8 @@
 
 @import "lib/normalize";
 @import "lib/splide.min";
+@import "lib/swiper-vars";
+@import "lib/swiper";
 
 @import "guitar/global";
 @import "guitar/content";
@@ -52,5 +54,5 @@
 @import "guitar/basket";
 @import "guitar/videoBanner";
 @import "guitar/person";
-
-
+@import "guitar/cardsNav";
+@import "guitar/stories";
