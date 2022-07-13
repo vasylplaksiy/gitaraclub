@@ -1,12 +1,16 @@
 .stories {
   & {
-    margin: 0 -12px;
+    margin: 0 -10px;
+    @media all and (max-width: 767px) {
+      padding-right: 20px;
+    }
   }
 
   &Wrap {
     max-width: 1600px;
+    max-width: 1170px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 10px;
   }
 
   &List {
@@ -15,17 +19,19 @@
   }
 
   &El {
-    padding: 12px;
+    padding: 10px;
 
     &Link {
-      height: 20vw;
       display: block;
       overflow: hidden;
-      border-radius: 16px;
+      border-radius: 14px;
       position: relative;
+      //height: 30vh;
+      //min-height: 150px;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      padding: 178% 0 0 0;
 
       &:after {
         background: rgb(23, 26, 28);
@@ -92,6 +98,10 @@
       display: block;
       width: 24px;
       height: 24px;
+    }
+
+    @media all and (max-width: 767px) {
+      display: none;
     }
 
   }
@@ -181,6 +191,7 @@
 
   &Slider {
     height: 100%;
+    width: 100%;
     position: relative;
   }
 

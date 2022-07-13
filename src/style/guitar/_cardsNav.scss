@@ -1,37 +1,88 @@
 .cardsNav {
-  max-width: 1600px;
+  max-width: 1170px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 10px;
+
+  @media all and (max-width: 767px) {
+    margin-top: -15px;
+  }
 
   &List {
-    margin: 0 -15px;
+    margin: 0 -10px;
     display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    @media all and (max-width: 767px) {
+      display: block;
+    }
   }
 
   &Col {
-    padding: 0 15px;
+    padding: 0 10px;
+    display: inline-flex;
+    flex-direction: column;
+    min-height: 100%;
+    justify-content: stretch;
+
+    @media all and (max-width: 767px) {
+      display: block;
+    }
+
 
     &_w {
       width: 41.67%;
+      width: 40%;
     }
 
     &_m {
       width: 33.33%;
+      width: 32%;
     }
 
     &_s {
       width: 25%;
+      width: 28%;
+    }
+
+    @media all and (max-width: 959px) {
+      &_w {
+        width: 100%;
+      }
+
+      &_m {
+        width: 60%;
+      }
+
+      &_s {
+        width: 40%;
+      }
+    }
+
+    @media all and (max-width: 767px) {
+      &_w {
+        width: 100%;
+      }
+
+      &_m {
+        width: 100%;
+      }
+
+      &_s {
+        width: 100%;
+      }
     }
   }
 
+
   &El {
     background: rgb(229, 230, 230);
-    border-radius: 20px;
+    border-radius: 14px;
     overflow: hidden;
     position: relative;
     min-height: 13rem;
     margin: 30px 0 0 0;
     padding: 25px;
+    height: 100%;
     color: rgb(23, 26, 28);
 
     & > * {
@@ -48,7 +99,6 @@
       display: block;
       z-index: 4;
     }
-
 
     &Icon {
       background: #fff;
@@ -71,8 +121,9 @@
       margin: 0 0 20px 0;
       max-width: 66%;
 
-      &_wide {
-        max-width: 100%;
+
+      @media all and (max-width: 767px) {
+        font-size: 22px;
       }
     }
 
@@ -84,10 +135,6 @@
       flex-flow: row wrap;
       max-width: 66%;
       z-index: auto;
-
-      &_wide {
-        max-width: 100%;
-      }
 
       li {
         padding: 2px;
@@ -130,7 +177,17 @@
         position: absolute;
       }
 
-      &_simple {
+    }
+
+    @media all and (min-width: 960px), all and (max-width: 479px) {
+      &_large &Title {
+        max-width: 100%;
+      }
+      &_large &Tags {
+        max-width: 100%;
+      }
+
+      &_large &Img {
         display: block;
         position: relative;
         margin: 20px -25px 0 -25px;
@@ -138,6 +195,7 @@
         left: auto;
         right: auto;
         bottom: auto;
+        background: none !important;
 
         img {
           position: relative;

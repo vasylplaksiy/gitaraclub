@@ -210,44 +210,8 @@ var lazyLoad = {
                 el.classList.add("loaded");
                 el.classList.add("imgError");
                 el.parentNode.classList.add("imgLoaded");
-                /*		if(el.getAttribute("data-src") == "") {
-                            console.log("asd")
-                        }
-                        if(el.parentNode.classList.contains("catalogItemImgLink")) {
-                            var src = el.src;
-                            el.parentNode.setAttribute("style", "background-image:url('" + defaultImgSrc + "')");
-                        }*/
-
             },
             callback_enter: function (el) {
-                /*
-                                if(el.parentNode.classList.contains("catalogItemImgLink")) {
-                                    if(el.getAttribute("data-src") == "") {
-                                        el.srcset = "";
-                                        el.src = defaultImgSrc;
-                                        el.classList.add("loaded");
-                                        el.parentNode.classList.add("imgLoaded");
-                                        if(el.parentNode.classList.contains("catalogItemImgLink")){
-                                            var href = el.parentNode.href;
-                                            var xhr = new XMLHttpRequest();
-                                            var loadedSrc = el.getAttribute("data-src");
-                                            var fd = new FormData();
-                                            if(typeof href == "undefined" || href == "") return false;
-                                            fd.append( 'url', href );
-                                            fd.append( 'src', loadedSrc );
-                                            fd.append( 'imgTest', imgTestAjax );
-                                            xhr.open("POST", "/ajax/noImage.php", true);
-                                            xhr.send(fd);
-                                        }
-                                        if(el.parentNode.classList.contains("catalogItemImgLink")) {
-                                            var src = el.src;
-                                            el.parentNode.setAttribute("style", "background-image:url('" + defaultImgSrc + "')");
-                                        }
-                                        return false;
-                                    }
-                                }
-                */
-
             },
             callback_loaded: function (el) {
                 var src = el.getAttribute("data-src");
@@ -269,6 +233,24 @@ var lazyLoad = {
                 el.classList.add("loaded");
                 el.classList.add("imgError");
                 el.parentNode.classList.add("imgLoaded");
+            },
+            callback_enter: function (el) {
+            },
+            callback_loaded: function (el) {
+                var src = el.getAttribute("data-src");
+                el.classList.add("loaded");
+                el.parentNode.classList.add("imgLoaded");
+                el.parentNode.setAttribute("style", "background-image:url('" + src + "')");
+            }
+        });
+        var lazyLoadInstanceBgSrc = new LazyLoad({
+            elements_selector: ".lazyBgSrc",
+            callback_error: function (el) {
+                el.srcset = "";
+                el.src = defaultImgSrc;
+                el.classList.add("loaded");
+                el.classList.add("imgError");
+                el.parentNode.classList.add("imgLoaded");
                 /*		if(el.getAttribute("data-src") == "") {
                             console.log("asd")
                         }
@@ -279,38 +261,9 @@ var lazyLoad = {
 
             },
             callback_enter: function (el) {
-                /*
-                                if(el.parentNode.classList.contains("catalogItemImgLink")) {
-                                    if(el.getAttribute("data-src") == "") {
-                                        el.srcset = "";
-                                        el.src = defaultImgSrc;
-                                        el.classList.add("loaded");
-                                        el.parentNode.classList.add("imgLoaded");
-                                        if(el.parentNode.classList.contains("catalogItemImgLink")){
-                                            var href = el.parentNode.href;
-                                            var xhr = new XMLHttpRequest();
-                                            var loadedSrc = el.getAttribute("data-src");
-                                            var fd = new FormData();
-                                            if(typeof href == "undefined" || href == "") return false;
-                                            fd.append( 'url', href );
-                                            fd.append( 'src', loadedSrc );
-                                            fd.append( 'imgTest', imgTestAjax );
-                                            xhr.open("POST", "/ajax/noImage.php", true);
-                                            xhr.send(fd);
-                                        }
-                                        if(el.parentNode.classList.contains("catalogItemImgLink")) {
-                                            var src = el.src;
-                                            el.parentNode.setAttribute("style", "background-image:url('" + defaultImgSrc + "')");
-                                        }
-                                        return false;
-                                    }
-                                }
-                */
-
             },
             callback_loaded: function (el) {
                 var src = el.getAttribute("data-src");
-
                 el.classList.add("loaded");
                 el.parentNode.classList.add("imgLoaded");
                 el.parentNode.setAttribute("style", "background-image:url('" + src + "')");

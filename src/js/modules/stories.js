@@ -2,13 +2,15 @@ var stories = {
 
     init: function () {
         this.slider();
-        this.popupSlider();
     },
 
     slider: function () {
         var storiesSwiper = new Swiper(".stories", {
             slidesPerView: 2,
+            slidesPerGroup: 2,
             spaceBetween: 0,
+            slideToClickedSlide: false,
+            shortSwipes: false,
             freeMode: {
                 enabled: true,
                 minimumVelocity: 0.2,
@@ -23,25 +25,38 @@ var stories = {
                 nextEl: '.storiesNext',
                 prevEl: '.storiesPrev',
             },
+            centeredSlides: false,
             breakpoints: {
-                768: {
-                    slidesPerView: 3
+                0: {
                 },
-                1024: {
-                    slidesPerView: 4
+                380: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2,
+                },
+                768: {
+                    slidesPerGroup: 4,
+                    slidesPerView: 4,
+                    slideToClickedSlide: false,
+                    shortSwipes: false,
+                },
+                960: {
+                    slidesPerGroup: 5,
+                    slidesPerView: 5
                 },
                 1280: {
+                    slidesPerGroup: 5,
                     slidesPerView: 5
                 },
                 1440: {
-                    slidesPerView: 7
+                    slidesPerGroup: 5,
+                    slidesPerView: 5
                 }
             },
         });
 
-    },
 
-    popupSlider: function (){
+        ;
+
         const storiesSliderSwiper = new Swiper('.storiesPopupSlider', {
             effect: "coverflow",
             grabCursor: false,
@@ -50,7 +65,6 @@ var stories = {
             slidesPerView: "auto",
             preloadImages: false,
             spaceBetween: 150,
-            lazy: true,
             // Enable lazy loading
             lazy: {
                 loadPrevNext: true,
@@ -76,23 +90,35 @@ var stories = {
 
         });
 
-        document.querySelectorAll(".storiesElLink").forEach(function (el){
-            el.addEventListener("click", function (e){
-                e.preventDefault();
-                const elIndex = parseInt(this.closest(".storiesEl").getAttribute('data-i'));
-                storiesSliderSwiper.slideToLoop(elIndex, 200, function (){});
-                pageScroll.disable();
-                document.querySelector("body").classList.add("modalOnPage");
-                document.querySelector(".storiesPopup").classList.add("active");
-            })
-        });
-        document.querySelector(".storiesPopupClose").addEventListener("click", function (e){
+
+        document.querySelector(".storiesPopupClose").addEventListener("click", function (e) {
             document.querySelector(".storiesPopup").classList.remove("active");
             pageScroll.enable();
             document.querySelector("body").classList.remove("modalOnPage");
-        })
-    }
+        });
 
+        function linkClick() {
+            document.querySelectorAll(".storiesElLink:not(.popupInit)").forEach(function (el) {
+                el.classList.add("popupInit");
+                el.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const elIndex = parseInt(this.closest(".storiesEl").getAttribute('data-i'));
+                    storiesSliderSwiper.slideToLoop(elIndex, 200, function () {
+                    });
+                    pageScroll.disable();
+                    document.querySelector("body").classList.add("modalOnPage");
+                    document.querySelector(".storiesPopup").classList.add("active");
+                })
+            });
+        }
+
+        linkClick()
+
+        storiesSwiper.on('slideChange', function () {
+            linkClick()
+        })
+
+    }
 
 };
 
