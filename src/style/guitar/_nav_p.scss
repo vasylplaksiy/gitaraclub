@@ -530,8 +530,9 @@
     padding: 20px;
     color: #fff;
     overflow: auto;
-    background: #007cba url("img/navBg.png") center top no-repeat;
-    background: #007cba url("img/navBg.png") center top no-repeat;
+    background: #007cba;
+    //background: #007cba url("img/navBg.png") center top no-repeat;
+    //background: #007cba url("img/navBg.png") center top no-repeat;
     background-size: cover;
 
     &:after {

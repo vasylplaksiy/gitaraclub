@@ -1,0 +1,41 @@
+.icon {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+
+  &-facebook {
+    background-image: inline("facebook-f.svg");
+  }
+
+  &-vk {
+    background-image: inline("vk.svg");
+  }
+
+  &-youtube {
+    background-image: inline("youtube.svg");
+  }
+
+  &-instagram {
+    background-image: inline("instagram.svg");
+  }
+
+  &-caret {
+    background-image: inline("caret-down.svg");
+
+    &-white {
+      background-image: inline("caret-down-white.svg");
+    }
+  }
+
+  &-phone {
+    background-image: inline("phone.svg");
+
+    .repair & {
+      background-image: inline("phone-white.svg");
+      transform: rotate(100deg);
+    }
+  }
+}

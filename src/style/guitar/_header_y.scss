@@ -161,6 +161,7 @@
           content: "a";
         }
       }
+
       p {
         margin: 5px 0 0 0;
       }
@@ -182,6 +183,7 @@
       span + span {
         float: right;
         color: red;
+
         &:after {
           @extend .rub;
           content: "a";
@@ -227,10 +229,10 @@
       padding: 13px 13px;
       display: block;
       text-align: center;
-      @extend .icon-magnifier;
+      //@extend .icon-magnifier;
 
       &:before {
-        @extend .lineariconsEl;
+        //@extend .lineariconsEl;
         display: none;
         font-size: 14px;
         line-height: 14px;
@@ -238,8 +240,10 @@
         top: 50%;
         left: 50%;
         margin: -7px 0 0 -7px;
-      }
+        background: url("img/svg/search2-white.svg") center no-repeat;
+        background-size: contain;
 
+      }
     }
 
     &Input {
@@ -329,10 +333,12 @@
 
   &FavLink, &CompareLink, &BasketLink {
     text-decoration: none !important;
+
     & > a,
     & > i {
       font-size: 30px;
       line-height: 42px;
+
       color: #000;
       display: block;
       text-decoration: none;
@@ -341,6 +347,29 @@
     & > span {
       font-size: 12px !important;
       line-height: 20px !important;
+    }
+  }
+
+  &SearchToggle,
+  &BasketLink {
+    & > i {
+      height: 42px;
+      width: 30px;
+      background: url("img/svg/bag.svg") center no-repeat;
+      background-size: contain;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &SearchToggle {
+    & > i {
+      background-image: url("img/svg/search2.svg");
+      &:before {
+        display: none;
+      }
     }
   }
 
@@ -557,6 +586,7 @@
 
       &Nav {
         padding: 4px 0;
+
         a {
           padding-left: 0;
           margin-right: 5px;
@@ -634,11 +664,11 @@
   }
 
   @media all and (max-width: 640px) {
-   &Logo {
-     .piano & {
-       width: 140px;
-     }
-   }
+    &Logo {
+      .piano & {
+        width: 140px;
+      }
+    }
   }
   @media all and (max-width: 380px) {
     &Logo {
@@ -856,7 +886,7 @@ body .multi-theme-compact .multi-layout {
 }
 
 
-@media all and (min-width: 686px) and  (max-width: 1199px) {
+@media all and (min-width: 686px) and (max-width: 1199px) {
   body .multi-theme-compact .multi-wrapper,
   body.noTopBanner .multi-theme-compact .multi-wrapper {
     margin: 39px auto 20px auto;
@@ -868,6 +898,7 @@ body .multi-theme-compact .multi-layout {
     margin: 0 10px;
   }
 }
+
 @media all and (max-width: 685px) {
   body .multi-theme-compact .multi-layout {
     margin: 0px;
