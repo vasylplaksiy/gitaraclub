@@ -178,32 +178,77 @@
       }
 
     }
+    @media all and (max-width: 959px), all and (min-width: 480px) {
+      &_large &Img {
+        display: block;
+        background: none !important;
 
+        img {
+          opacity: 1 !important;
+          //width: 120%;
+          //max-width: 120%;
+          //margin-bottom: -4rem;
+          //left: 10%;
+          display: block;
+          max-width: 150%;
+          max-height: 150%;
+          position: absolute;
+          right: -20px;
+          top: auto;
+          bottom: -30px;
+          transform: rotate(30deg);
+          //top: -30px;
+          //right: -30px;
+        }
+      }
+    }
     @media all and (min-width: 960px), all and (max-width: 479px) {
       &_large &Title {
-        max-width: 100%;
+        //max-width: 100%;
       }
       &_large &Tags {
-        max-width: 100%;
+        //max-width: 100%;
       }
 
       &_large &Img {
         display: block;
-        position: relative;
-        margin: 20px -25px 0 -25px;
-        top: 25px;
-        left: auto;
-        right: auto;
-        bottom: auto;
+        background: none !important;
+
+        img {
+          opacity: 1 !important;
+          //width: 120%;
+          //max-width: 120%;
+          //margin-bottom: -4rem;
+          //left: 10%;
+          display: block;
+          max-width: 100%;
+          max-height: 100%;
+          position: absolute;
+          right: -40px;
+          top: 0;
+          transform: rotate(30deg);
+          //top: -30px;
+          //right: -30px;
+        }
+      }
+
+
+      &_l &Img {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        right: 0;
+        bottom: 0;
         background: none !important;
 
         img {
           position: relative;
           opacity: 1 !important;
-          width: 120%;
-          max-width: 120%;
-          margin-bottom: -4rem;
-          left: 10%;
+          //width: 120%;
+          //max-width: 120%;
+          //margin-bottom: -4rem;
+          //left: 10%;
           transform: rotate(10deg);
         }
       }

@@ -218,7 +218,7 @@ var lazyLoad = {
 
                 el.classList.add("loaded");
                 el.parentNode.classList.add("imgLoaded");
-
+                el.src = src;
                 if (el.parentNode.classList.contains("catalogElImg")) {
                     var src = el.src;
                     el.parentNode.setAttribute("style", "background-image:url('" + src + "')");
@@ -239,6 +239,7 @@ var lazyLoad = {
             callback_loaded: function (el) {
                 var src = el.getAttribute("data-src");
                 el.classList.add("loaded");
+                el.src = src;
                 el.parentNode.classList.add("imgLoaded");
                 el.parentNode.setAttribute("style", "background-image:url('" + src + "')");
             }

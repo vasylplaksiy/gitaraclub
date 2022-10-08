@@ -43,6 +43,7 @@
         right: 0;
         bottom: 0;
         content: "";
+        display: none;
       }
 
       &:hover:after {
@@ -64,10 +65,12 @@
     }
 
     &Text {
-      padding: 12px;
+      padding: 40px 12px 12px 12px;
       position: absolute;
       display: block;
       bottom: 0;
+      background: rgb(0,0,0);
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.35) 100%);
       left: 0;
       right: 0;
       font-size: 13px;
